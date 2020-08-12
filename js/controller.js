@@ -49,3 +49,5 @@ function increaseFont(){
     gFontSize+=2
 
 }
+
+console.log('a');
