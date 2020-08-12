@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meme Generator Sprint 2 - Tal Lahyani</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body onload="init()">
+    <div class="header-container">
+        <div class="links-contaner">
+            <div class="gallery"></div>
+            <div class="about"></div>
+        </div>
+        <div class="logo"></div>
+    </div>
+
+
+    <div class="gallery-container">
+        <img class="img-01 img" src="imgs/memes/1.jpg" alt="Image">
+    </div>
+    <div class="container">
+        <div class="inputs-container">
+            <input onchange="setMemeText()" type="text" id="text" placeholder="Enter Your text here">
+            <button onclick="increaseFont()" class="increase">+</button>
+            <button onclick="decreaseFont()" class="decrease">-</button>
+
+        </div>
+        <div class="canvas-container">
+            <canvas id="myCanvas" height="550" width="550">
+            </canvas>
+        </div>
+    </div>
+
+    <script src="js/controller.js"></script>
+    <script src="js/service.js"></script>
+</body>
+
+</html>
