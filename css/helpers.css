@@ -35,3 +35,6 @@ button{
     border-image: none;
     outline: none;
 }
+img{
+    cursor: pointer;
+}
