@@ -5,35 +5,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meme Generator Sprint 2 - Tal Lahyani</title>
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/page.css">
+    <link rel="stylesheet" href="css/canvas.css">
+    <link rel="stylesheet" href="css/helpers.css">
 </head>
 
 <body onload="init()">
-    <div class="header-container">
-        <div class="links-contaner">
-            <div class="gallery"></div>
-            <div class="about"></div>
+    <div class="header-container flex">
+        <div class="logo">LOGO</div>
+        <div class="links-container flex">
+            <div class="gallery">GALLERY</div>
+            <div class="about">ABOUT</div>
         </div>
         <div class="logo"></div>
     </div>
+    <div class="main-container">
+        <div class="search-container flex align-center">
+            <input type="text" class="search-bar" placeholder="SEARCH">
+            <div class="last-searches flex">
+                <a href="#" class="used-words">Funny</a>
+                <a href="#" class="used-words">Happy</a>
+                <a href="#" class="used-words">Sad</a>
+                <a href="#" class="used-words">Baby</a>
+                <a href="#" class="used-words">Trump</a>
 
-
-    <div class="gallery-container">
-        <img class="img-01 img" src="imgs/memes/1.jpg" alt="Image">
-    </div>
-    <div class="container">
-        <div class="inputs-container">
-            <input onchange="setMemeText()" type="text" id="text" placeholder="Enter Your text here">
-            <button onclick="increaseFont()" class="increase">+</button>
-            <button onclick="decreaseFont()" class="decrease">-</button>
-
+            </div>
+            <div class="more">
+                <a href="#" class="more-btn">More</a>
+            </div>
         </div>
-        <div class="canvas-container">
-            <canvas id="myCanvas" height="550" width="550">
+        
+
+        <div class="gallery-container grid">
+            
+ 
+        </div>
+
+
+        <div class="canvas-container" hidden>
+            <div class="inputs-container">
+                <input onkeyup="setMemeText()" type="text" id="text" placeholder="Enter Your text here">
+                <button onclick="onChangeFontSize('bigger')" class="increase">+</button>
+                <button onclick="onChangeFontSize('smaller')" class="decrease">-</button>
+                <button onclick="onChangeTextPos('up')" class="text-up">up</button>
+                <button onclick="onChangeTextPos('down')" class="text-down">down</button>
+                <button onclick="onAddLine()">add line</button>
+                <button onclick="onSwitchLine()" class="switch-line">Switch Line</button>
+
+            </div>
+            <canvas id="myCanvas" height="500" width="500">
             </canvas>
         </div>
     </div>
 
+
+<footer>FOOTER</footer>
     <script src="js/controller.js"></script>
     <script src="js/service.js"></script>
 </body>
