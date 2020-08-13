@@ -50,6 +50,8 @@ body {
     height: 60px;
     border-radius: 30px;
     color: white;
+    border-style: none;
+    outline: none;
 }
 
 ::placeholder {
@@ -81,7 +83,11 @@ body {
     border-radius: 18px;
     text-decoration: none;
 }
+
+.gallery-container{
+    grid-template-columns: repeat(5,1fr);
+    gap: 10px;
+}
 .img {
-    width: 150px;
-    margin-right: 10px;
+    max-width: 100%;
 }

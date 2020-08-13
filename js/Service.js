@@ -2,7 +2,23 @@
 var gKeywords = { 'happy': 12, 'funny puk': 1 }
 var gImgs = [{ id: 1, url: 'imgs/memes/1.jpg', keywords: ['trump'] },
 { id: 2, url: 'imgs/memes/2.jpg', keywords: ['dogs'] },
-{ id: 3, url: 'imgs/memes/3.jpg', keywords: ['dog baby'] }];
+{ id: 3, url: 'imgs/memes/3.jpg', keywords: ['dog baby'] },
+{ id: 3, url: 'imgs/memes/4.jpg', keywords: ['dog baby'] },
+{ id: 3, url: 'imgs/memes/5.jpg', keywords: ['dog baby'] },
+{ id: 3, url: 'imgs/memes/6.jpg', keywords: ['dog baby'] },
+{ id: 3, url: 'imgs/memes/7.jpg', keywords: ['dog baby'] },
+{ id: 3, url: 'imgs/memes/8.jpg', keywords: ['dog baby'] },
+{ id: 3, url: 'imgs/memes/9.jpg', keywords: ['dog baby'] },
+{ id: 3, url: 'imgs/memes/10.jpg', keywords: ['dog baby'] },
+{ id: 3, url: 'imgs/memes/12.jpg', keywords: ['dog baby'] },
+{ id: 3, url: 'imgs/memes/13.jpg', keywords: ['dog baby'] },
+{ id: 3, url: 'imgs/memes/14.jpg', keywords: ['dog baby'] },
+{ id: 3, url: 'imgs/memes/15.jpg', keywords: ['dog baby'] },
+{ id: 3, url: 'imgs/memes/16.jpg', keywords: ['dog baby'] },
+{ id: 3, url: 'imgs/memes/17.jpg', keywords: ['dog baby'] },
+{ id: 3, url: 'imgs/memes/18.jpg', keywords: ['dog baby'] },
+{ id: 3, url: 'imgs/memes/19.jpg', keywords: ['dog baby'] }
+];
 var gMeme = {
     selectedImgId: 5, selectedLineIdx: 0,
     lines: [{ txt: 'Enter Text', size: 45, align: 'left', color: 'red', pos: { x: 250, y: 65 } },

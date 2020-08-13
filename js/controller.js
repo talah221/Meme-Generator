@@ -12,7 +12,7 @@ function renderGallery() {
     var imgNum = 1
     allImgs.forEach((img) => {
         // str += `<img onclick="renderCanvas(0,0,getImgUrl(${imgNum-1}))" class="img-0${imgNum} img" src="imgs/memes/${imgNum}.jpg" alt="Image">`
-        str += `<img onclick="onUpdateMeme(${imgNum})" class="img-01 img" src="imgs/memes/${imgNum}.jpg" alt="Image">`
+        str += `<img onclick="onUpdateMeme(${imgNum})" class="img-01 img" src="imgs/memes/${imgNum}.jpg" alt="Can't find image.">`
 
         imgNum++
     })
