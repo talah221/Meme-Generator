@@ -1,5 +1,11 @@
-gCanvas = document.querySelector('#myCanvas');
-gCtx = gCanvas.getContext('2d');
+'use strict'
+
+const gCanvas = document.querySelector('#myCanvas');
+const gCtx = gCanvas.getContext('2d');
+
+var gIsMouseDown=false;
+
+
 
 
 function init() {
@@ -35,7 +41,7 @@ function drawText() {
     // const currLine = currMeme.lines[currMeme.selectedLineIdx];
     // const memePos = currMeme.lines[currMeme.selectedLineIdx].pos
 
-    memeText = getImgText()
+    const memeText = getImgText()
 
     currMeme.lines.forEach(function (line) {
 
@@ -62,17 +68,17 @@ function drawText() {
 
 function setMemeText() {
     var givenText = document.querySelector('#text').value;
-    if (!givenText) givenText = 'No Text'
     updateText(givenText)
     renderCanvas()
 }
 
 function onUpdateMeme(imgNum) {
     updateMeme(imgNum)
+    document.querySelector('.main-container').classList.add('hide')
+    document.querySelector('.editor-container').classList.add('show')
 }
 
 function onChangeFontSize(size) {
-    // gCtx.clearRect(0, 0, gCanvas.width, gCanvas.height);
     changeFontSize(size)
     renderCanvas()
 }
@@ -89,7 +95,28 @@ function onAddLine() {
 }
 
 function onSwitchLine() {
-    document.querySelector('#text').value=''
+    document.querySelector('#text').value = ''
     switchLine()
     drawText()
+}
+
+function onDeleteLine() {
+    if (gMeme.lines.length === 1) return;
+    deleteLine();
+    renderCanvas()
+
+}
+
+function moveToGallery() {
+    document.querySelector('.main-container').classList.remove('hide')
+    document.querySelector('.editor-container').classList.remove('show')
+}
+
+function toggleClick() {
+    gIsMouseDown = !gIsMouseDown;
+}
+
+function moveText(ev){
+    const { layerX, layerY } = ev;
+    isOnTxt(layerX,layerY)
 }

@@ -1,0 +1,98 @@
+.container {
+    display: flex;
+}
+
+.container>div {
+    justify-content: center;
+    align-items: center;
+}
+
+.editor-container {
+    margin: 0 30px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#myCanvas {
+    background-color: white;
+    margin-top: 10px;
+    margin-right: 10px;
+    border-radius: 25px;
+}
+
+.editor-panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #383b42;
+    border-radius: 30px;
+    padding: 10px;
+    margin-top: 10px;
+    margin-left: 10px;
+    width: 500px;
+    height: 500px;
+}
+
+.editor-panel input {
+    outline: none;
+    width: 80%;
+    background-color: #ebeef3;
+    box-shadow: 1px 5px 0 #bbc4d1, inset 0 5px 0 #ffffff;
+    border-radius: 25px;
+    height: 35px;
+    margin: 15px 12px 18px 12px;
+    font: 20px Poppins;
+}
+
+.switch-add-delete {
+    margin-bottom: 18px;
+}
+
+.add-line {
+    margin: 0 15px
+}
+
+.font-editor {
+    justify-content: space-between;
+    padding: 15px;
+    width: 445px;
+    height: 151px;
+    border-radius: 15px;
+    background-color: #19a59f;
+}
+
+.font-editor>button {
+    width: 60px;
+    height: 40px;
+    border-radius: 10px;
+    box-shadow: 1px 5px 0 rgba(92, 92, 92, 0.55), inset 0 5px 0 rgba(255, 255, 255, 0.58);
+    background-color: #ffffff;
+}
+
+.font-editor>img {
+    height: 33%;
+}
+
+.emojis-area {
+    margin: 20px 0;
+    width: 445px;
+    height: 91px;
+    border-radius: 45px;
+    background-color: #ffffff;
+}
+
+.editor-panel img {
+    cursor: pointer;
+}
+
+@media(max-width:650px) {
+    .editor-container {
+        flex-direction: column;
+        margin:15px 15px;
+        padding:0;
+    }
+    #myCanvas {
+        margin:15px 15px
+    }
+}

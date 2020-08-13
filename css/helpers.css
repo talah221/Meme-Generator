@@ -14,3 +14,24 @@
 button{
     cursor: pointer;
 }
+.hide{
+    display: none;
+}
+
+.show{
+    display: flex;
+}
+
+.clear-input{
+    border-width: none;
+    border-style: none;
+    border-color:none; 
+    outline: none;
+    text-align: center;
+}
+
+.clear-btns{
+    border-style: none;
+    border-image: none;
+    outline: none;
+}
