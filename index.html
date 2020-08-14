@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meme Generator Sprint 2 - Tal Lahyani</title>
+    <title>Meme Generator Tal Lahyani</title>
     <link rel="stylesheet" href="css/page.css">
     <link rel="stylesheet" href="css/edit-canvas.css">
     <link rel="stylesheet" href="css/helpers.css">
@@ -12,19 +12,22 @@
 
 <body onload="init()">
     <div class="header-container flex">
-        <div class="logo">LOGO</div>
+        <div class="logo" onclick="movePage('gallery')">Meme Generator</div>
         <div class="links-container flex">
-            <div class="gallery">
-                <a href="#" onclick="moveToGallery()">Gallery</a>
+            <div class="gallery ">
+                <a class="gallery-link link active" href="#" onclick="movePage('gallery')">Gallery</a>
             </div>
             <div class="about">
-                <a href="#" onclick="moveToAbout()">About</a>
+                <a class= "about-link link" href="#" onclick="movePage('about')">About</a>
+            </div>
+            <div class="editor">
+                <a class="editor-link link "about-link" href="#" onclick="movePage('editor')">Editor</a>
             </div>
         </div>
         <div class="logo"></div>
     </div>
     <div class="main-container">
-        <div class="search-container flex align-center">
+        <div class="search-container flex">
             <input type="text" class="search-bar" placeholder="SEARCH">
             <!-- <i class="fas fa-search"></i> -->
             <div class="last-searches flex">
@@ -54,10 +57,11 @@
     <div class="editor-container flex hide">
         <div class="canvas-container">
             <!-- onmouseup="toggleClick()" onmousedown="toggleClick()" ontouchstart="toggleClick() -->
-            <canvas id="myCanvas" height="500" width="500" 
-            onmousedown="toggleClick()"onmouseup="toggleClick()" ontouchstart="toggleClick()" onmousemove="moveText(event)" >
+            <canvas id="myCanvas" height="500" width="500" onmousedown="toggleClick()" onmouseup="toggleClick()"
+                ontouchstart="toggleClick()" onmousemove="moveText(event)">
             </canvas>
         </div>
+        <div class="empty-div"></div>
         <div class="editor-panel">
             <input class="clear-input" onkeyup="setMemeText()" type="text" id="text" placeholder="Enter Your text here">
             <div class="switch-add-delete flex">
@@ -72,9 +76,9 @@
                 <button onclick="onChangeTextPos('down')" class="clear-btns text-down">down</button>
             </div>
             <div class="emojis-area"></div>
-            <div class="save-share-download">
+            <div class="save-share-download flex">
                 <!-- <button class="save">SAVE</button> -->
-                <img src="imgs/editor/download.png" alt="">
+                <img class="download-img" src="imgs/editor/download.png" alt="">
                 <img src="imgs/editor/share.png" alt="">
             </div>
         </div>

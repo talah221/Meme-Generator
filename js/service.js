@@ -42,7 +42,6 @@ function addLine() {
 function switchLine() {
     gMeme.selectedLineIdx++;
     if (gMeme.selectedLineIdx >= gMeme.lines.length) gMeme.selectedLineIdx = 0;
-    console.log('line:', gMeme.selectedLineIdx);
 }
 
 function getMeme() {
@@ -90,9 +89,15 @@ function deleteLine() {
 }
 
 function isOnTxt(x, y) {
-    // console.log('x:',x,'y:',y);
-    // console.log('pos.x',gMeme.lines[gMeme.selectedLineIdx].pos.x,'pos.y:',gMeme.lines[gMeme.selectedLineIdx].pos.y);
-    var textLetters=gMeme.lines[gMeme.selectedLineIdx].txt.length
-    if (Math.abs(x-gMeme.lines[gMeme.selectedLineIdx].pos.x)<textLetters*10 && Math.abs(y-gMeme.lines[gMeme.selectedLineIdx].pos.y)<textLetters*10
-    ) console.log('ON!')
+
+    // const textLetters = gMeme.lines[gMeme.selectedLineIdx].txt.length
+    // const textLength = gCtx.measureText(gMeme.lines[gMeme.selectedLineIdx].txt).width
+    // const xStart = gMeme.lines[gMeme.selectedLineIdx].pos.x
+    // const yStart = gMeme.lines[gMeme.selectedLineIdx].pos.y
+    // var xRange = [xStart - (textLetters*10), xStart + (textLetters*10)]
+    // console.log("isOnTxt -> xRange", xRange)
+    // var yRange = [yStart + 15, yStart - 15]
+    // if (x > xRange[0] && x < xRange[1]) console.log('onX');
+    // // if(x ===xRange[0] || x===xRange[1] || xRange[2] && y===yRange[0]||yRange[1]) console.log('on.');
+
 }

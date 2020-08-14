@@ -34,7 +34,8 @@ function renderCanvas(imgStartX = 0, imgStartY = 0, imgUrl = getImgUrl()) {
         gCtx.drawImage(img, imgStartX, imgStartY, 500, 500)
         drawText()
     }
-
+    document.querySelector('.gallery-link ').classList.remove('active')
+    document.querySelector('.editor-link').classList.add('active')
 }
 function drawText() {
     const currMeme = getMeme()
@@ -107,10 +108,25 @@ function onDeleteLine() {
 
 }
 
-function moveToGallery() {
-    document.querySelector('.main-container').classList.remove('hide')
-    document.querySelector('.editor-container').classList.remove('show')
+function movePage(page) {
+    if(page==='gallery'){
+        document.querySelector('.main-container').classList.remove('hide')
+        document.querySelector('.editor-container').classList.remove('show')
+        document.querySelector('.gallery-link ').classList.add('active')
+        document.querySelector('.editor-link').classList.remove('active')
+        
+    }
+    else if(page==='editor'){
+        document.querySelector('.main-container').classList.add('hide')
+        document.querySelector('.editor-container').classList.add('show')
+        document.querySelector('.gallery-link ').classList.remove('active')
+        document.querySelector('.editor-link').classList.add('active')
+
+    }else{
+        console.log('no about page.');
+    }
 }
+
 
 function toggleClick() {
     gIsMouseDown = !gIsMouseDown;

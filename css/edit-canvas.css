@@ -17,8 +17,8 @@
 #myCanvas {
     background-color: white;
     margin-top: 10px;
-    margin-right: 10px;
     border-radius: 25px;
+    max-width: 100%;
 }
 
 .editor-panel {
@@ -29,9 +29,11 @@
     border-radius: 30px;
     padding: 10px;
     margin-top: 10px;
-    margin-left: 10px;
-    width: 500px;
+    max-width: 100%;
     height: 500px;
+}
+.empty-div{
+    width: 15px;
 }
 
 .editor-panel input {
@@ -56,7 +58,7 @@
 .font-editor {
     justify-content: space-between;
     padding: 15px;
-    width: 445px;
+    width: 100%;
     height: 151px;
     border-radius: 15px;
     background-color: #19a59f;
@@ -76,7 +78,7 @@
 
 .emojis-area {
     margin: 20px 0;
-    width: 445px;
+    width: 90%;
     height: 91px;
     border-radius: 45px;
     background-color: #ffffff;
@@ -85,14 +87,15 @@
 .editor-panel img {
     cursor: pointer;
 }
+.download-img{
+    padding-right: 5px;
+}
 
-@media(max-width:650px) {
+@media(max-width:750px) {
     .editor-container {
         flex-direction: column;
         margin:15px 15px;
         padding:0;
     }
-    #myCanvas {
-        margin:15px 15px
-    }
+
 }
