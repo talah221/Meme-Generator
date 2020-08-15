@@ -12,6 +12,8 @@ function init() {
     renderGallery()
 }
 
+
+
 function renderGallery() {
     const allImgs = getAllImgs();
     var str = '';
@@ -135,4 +137,11 @@ function toggleClick() {
 function moveText(ev){
     const { layerX, layerY } = ev;
     isOnTxt(layerX,layerY)
+}
+
+function onSearch(){
+    const userText=document.querySelector('.search-bar').value;
+    search(userText);
+    renderGallery()
+
 }

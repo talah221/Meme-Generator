@@ -11,7 +11,7 @@ var gImgs = [{ id: 1, url: 'imgs/memes/1.jpg', keywords: ['trump'] },
 { id: 8, url: 'imgs/memes/8.jpg', keywords: ['dog baby'] },
 { id: 9, url: 'imgs/memes/9.jpg', keywords: ['dog baby'] },
 { id: 10, url: 'imgs/memes/10.jpg', keywords: ['dog baby'] },
-{ id: 11, url: 'imgs/memes/12.jpg', keywords: ['dog baby'] },
+{ id: 11, url: 'imgs/memes/12.jpg', keywords: ['man baby'] },
 { id: 12, url: 'imgs/memes/13.jpg', keywords: ['dog baby'] },
 { id: 13, url: 'imgs/memes/14.jpg', keywords: ['dog baby'] },
 { id: 14, url: 'imgs/memes/15.jpg', keywords: ['dog baby'] },
@@ -65,7 +65,7 @@ function updateText(txtFromUser) {
 }
 function updateMeme(imgNum) {
     var currMeme;
-    currMeme = currMeme = gImgs.filter(function (img) {
+    currMeme = gImgs.filter(function (img) {
         return (img.id === imgNum);
     })
     gMeme.selectedImgId = currMeme[0].id;
@@ -101,3 +101,14 @@ function isOnTxt(x, y) {
     // // if(x ===xRange[0] || x===xRange[1] || xRange[2] && y===yRange[0]||yRange[1]) console.log('on.');
 
 }
+
+// function search(txt) {
+
+//     var imgsToShow = gImgs.filter(img => {
+//         img.keywords.forEach(keyword=>{
+//             return keyword===txt
+//         })
+//     })
+//     return imgsToShow
+// }
+

@@ -18,17 +18,17 @@
                 <a class="gallery-link link active" href="#" onclick="movePage('gallery')">Gallery</a>
             </div>
             <div class="about">
-                <a class= "about-link link" href="#" onclick="movePage('about')">About</a>
+                <a class="about-link link" href="#" onclick="movePage('about')">About</a>
             </div>
             <div class="editor">
-                <a class="editor-link link "about-link" href="#" onclick="movePage('editor')">Editor</a>
+                <a class="editor-link link " about-link" href="#" onclick="movePage('editor')">Editor</a>
             </div>
         </div>
         <div class="logo"></div>
     </div>
     <div class="main-container">
         <div class="search-container flex">
-            <input type="text" class="search-bar" placeholder="SEARCH">
+            <input onkeyup="onSearch()" type="text" class="search-bar" placeholder="SEARCH">
             <!-- <i class="fas fa-search"></i> -->
             <div class="last-searches flex">
                 <a href="#" class="used-words">Funny</a>
@@ -72,8 +72,17 @@
             <div class="font-editor flex">
                 <img onclick="onChangeFontSize('bigger')" src="imgs/editor/a+.png" alt="">
                 <img onclick="onChangeFontSize('smaller')" src="imgs/editor/A-.png" alt="">
+                <img src="imgs/editor/inside-color.png" alt="">
+                <img src="imgs/editor/outside-color.jpg" alt="" style="border-radius: 10px;">
+                
                 <button onclick="onChangeTextPos('up')" class="clear-btns text-up">up</button>
                 <button onclick="onChangeTextPos('down')" class="clear-btns text-down">down</button>
+                <!-- <select name="Fonts" id="Fonts">
+                    Fonts:
+                    <option value="Poppins">Poppins</option>
+                    <option value="Poppins">Poppins</option>
+                    <option value="Poppins">Poppins</option>
+                </select> -->
             </div>
             <div class="emojis-area"></div>
             <div class="save-share-download flex">
