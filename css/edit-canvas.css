@@ -88,8 +88,12 @@
     cursor: pointer;
 }
 .download-img{
-    padding-right: 5px;
+    padding-right: 2.5px;
 }
+.share-img{
+    padding-left:2.5px;
+}
+
 
 @media(max-width:750px) {
     .editor-container {

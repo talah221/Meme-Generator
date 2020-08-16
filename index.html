@@ -12,7 +12,7 @@
 
 <body onload="init()">
     <div class="header-container flex">
-        <div class="logo" onclick="movePage('gallery')">Meme Generator</div>
+        <div class="logo" onclick="refresh()">Meme Generator</div>
         <div class="links-container flex">
             <div class="gallery ">
                 <a class="gallery-link link active" href="#" onclick="movePage('gallery')">Gallery</a>
@@ -21,44 +21,48 @@
                 <a class="about-link link" href="#" onclick="movePage('about')">About</a>
             </div>
             <div class="editor">
-                <a class="editor-link link " about-link" href="#" onclick="movePage('editor')">Editor</a>
+                <a class="editor-link link " href="#" onclick="movePage('editor')">Editor</a>
             </div>
         </div>
-        <div class="logo"></div>
-    </div>
-    <div class="main-container">
-        <div class="search-container flex">
-            <input onkeyup="onSearch()" type="text" class="search-bar" placeholder="SEARCH">
-            <!-- <i class="fas fa-search"></i> -->
-            <div class="last-searches flex">
-                <a href="#" class="used-words">Funny</a>
-                <a href="#" class="used-words">Happy</a>
-                <a href="#" class="used-words">Sad</a>
-                <a href="#" class="used-words">Baby</a>
-                <a href="#" class="used-words">Trump</a>
-
-            </div>
-            <div class="more">
-                <a href="#" class="more-btn">More</a>
-            </div>
-        </div>
-
-
-        <div class="gallery-container grid">
-
-
-        </div>
-
-
-
+        <button onclick="toggleMenu()" class=toggle-menu-btn>☰</button>
+        <div class="toggle-menu-screen screen" onclick="toggleMenu()" alt="toggle main menu"></div>
     </div>
 
 
-    <div class="editor-container flex hide">
-        <div class="canvas-container">
-            <!-- onmouseup="toggleClick()" onmousedown="toggleClick()" ontouchstart="toggleClick() -->
-            <canvas id="myCanvas" height="500" width="500" onmousedown="toggleClick()" onmouseup="toggleClick()"
-                ontouchstart="toggleClick()" onmousemove="moveText(event)">
+
+    <div class=" main-container ">
+        <div class="search-container flex ">
+            <input onkeyup="onSearch() " type="text " class="search-bar " placeholder="SEARCH ">
+            <div class="last-searches flex ">
+                <a href="# " onclick="onFiltering( 'all', this) " class="used-words all ">All Pictures</a>
+                <a href="# " onclick="onFiltering( 'funny', this) " class="used-words funny ">Funny</a>
+                <a href="# " onclick="onFiltering( 'baby', this) " class="used-words baby ">Baby</a>
+                <a href="# " onclick="onFiltering( 'serious', this) " class="used-words serious ">Serious</a>
+                <a href="# " onclick="onFiltering( 'dog', this) " class="used-words dog ">Dog</a>
+                <!-- <a href="# " onclick="onFiltering( 'cat', this) " class="used-words cat ">Cat</a> -->
+                <a href="# " onclick="onFiltering( 'complicated', this) " class="used-words complicated ">Complicated</a>
+
+            </div>
+            <div class="more ">
+                <a href="# " class="more-btn ">More</a>
+            </div>
+        </div>
+
+
+        <div class="gallery-container grid ">
+
+
+        </div>
+
+
+
+    </div>
+
+
+    <div class="editor-container flex hide ">
+        <div class="canvas-container ">
+            <!-- onmouseup="toggleClick() " onmousedown="toggleClick() " ontouchstart="toggleClick() -->
+            <canvas id="myCanvas" height="500" width="500" onmousedown="toggleClick()" onmouseup="toggleClick()" ontouchstart="toggleClick()" onmousemove="onMoveText(event)">
             </canvas>
         </div>
         <div class="empty-div"></div>
@@ -72,9 +76,7 @@
             <div class="font-editor flex">
                 <img onclick="onChangeFontSize('bigger')" src="imgs/editor/a+.png" alt="">
                 <img onclick="onChangeFontSize('smaller')" src="imgs/editor/A-.png" alt="">
-                <img src="imgs/editor/inside-color.png" alt="">
-                <img src="imgs/editor/outside-color.jpg" alt="" style="border-radius: 10px;">
-                
+
                 <button onclick="onChangeTextPos('up')" class="clear-btns text-up">up</button>
                 <button onclick="onChangeTextPos('down')" class="clear-btns text-down">down</button>
                 <!-- <select name="Fonts" id="Fonts">
@@ -88,7 +90,7 @@
             <div class="save-share-download flex">
                 <!-- <button class="save">SAVE</button> -->
                 <img class="download-img" src="imgs/editor/download.png" alt="">
-                <img src="imgs/editor/share.png" alt="">
+                <img class="share-img" src="imgs/editor/share.png" alt="">
             </div>
         </div>
     </div>

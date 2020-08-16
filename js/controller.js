@@ -3,31 +3,20 @@
 const gCanvas = document.querySelector('#myCanvas');
 const gCtx = gCanvas.getContext('2d');
 
-var gIsMouseDown=false;
-
-
+var gIsMouseDown = false;
 
 
 function init() {
     renderGallery()
 }
 
-
-
 function renderGallery() {
-    const allImgs = getAllImgs();
+    const allImgs = getImgsForDisplay();
     var str = '';
-    var imgNum = 1
-    allImgs.forEach((img) => {
-        // str += `<img onclick="renderCanvas(0,0,getImgUrl(${imgNum-1}))" class="img-0${imgNum} img" src="imgs/memes/${imgNum}.jpg" alt="Image">`
-        str += `<img onclick="onUpdateMeme(${imgNum})" class="img-01 img" src="imgs/memes/${imgNum}.jpg" alt="Can't find image.">`
-
-        imgNum++
-    })
+    allImgs.forEach(img => str += `<img onclick="onUpdateMeme(${img.id})" class="img-${img.id} img" src="${img.url}" alt="Can't find image.">`)
     var elGallery = document.querySelector('.gallery-container');
     elGallery.innerHTML = str;
 }
-// (imgStartX,imgStartY,imgUrl,textX,textY)
 
 function renderCanvas(imgStartX = 0, imgStartY = 0, imgUrl = getImgUrl()) {
     var img = new Image()
@@ -39,32 +28,24 @@ function renderCanvas(imgStartX = 0, imgStartY = 0, imgUrl = getImgUrl()) {
     document.querySelector('.gallery-link ').classList.remove('active')
     document.querySelector('.editor-link').classList.add('active')
 }
+
+console.log('');
+
 function drawText() {
     const currMeme = getMeme()
-    // const currLine = currMeme.lines[currMeme.selectedLineIdx];
-    // const memePos = currMeme.lines[currMeme.selectedLineIdx].pos
 
     const memeText = getImgText()
 
-    currMeme.lines.forEach(function (line) {
+    currMeme.lines.forEach(function(line) {
 
         gCtx.lineWidth = '2';
         gCtx.fillStyle = 'white';
         gCtx.textAlign = 'center';
         gCtx.font = `${line.size}px Impact`;
-        // if (currMeme.lines.length > 1) saveOtherLines()
         gCtx.fillText(line.txt, line.pos.x, line.pos.y);
-        gCtx.strokeText(line.txt, line.pos.x, line.pos.y);//img,x,y,xend,yend
+        gCtx.strokeText(line.txt, line.pos.x, line.pos.y); //img,x,y,xend,yend
     })
 
-    // function saveOtherLines() {
-    //     currMeme.lines.forEach(function (line) {
-
-    //         gCtx.fillText(line.txt, line.pos.x, line.pos.y)
-    //         gCtx.strokeText(line.txt, line.pos.x, line.pos.y)
-
-    //     })
-    // }
 }
 
 
@@ -111,20 +92,19 @@ function onDeleteLine() {
 }
 
 function movePage(page) {
-    if(page==='gallery'){
+    if (page === 'gallery') {
         document.querySelector('.main-container').classList.remove('hide')
         document.querySelector('.editor-container').classList.remove('show')
         document.querySelector('.gallery-link ').classList.add('active')
         document.querySelector('.editor-link').classList.remove('active')
-        
-    }
-    else if(page==='editor'){
+
+    } else if (page === 'editor') {
         document.querySelector('.main-container').classList.add('hide')
         document.querySelector('.editor-container').classList.add('show')
         document.querySelector('.gallery-link ').classList.remove('active')
         document.querySelector('.editor-link').classList.add('active')
 
-    }else{
+    } else {
         console.log('no about page.');
     }
 }
@@ -134,14 +114,46 @@ function toggleClick() {
     gIsMouseDown = !gIsMouseDown;
 }
 
-function moveText(ev){
-    const { layerX, layerY } = ev;
-    isOnTxt(layerX,layerY)
+function onMoveText(ev) {
+    const { offsetX, offsetY } = ev;
+    const { movementX, movementY } = ev;
+    isOnTxt(offsetX, offsetY)
+    if (gIsMouseDown) moveText(offsetX, offsetY)
+    renderCanvas()
+
 }
 
-function onSearch(){
-    const userText=document.querySelector('.search-bar').value;
-    search(userText);
+function onSearch() {
+    const userText = document.querySelector('.search-bar').value;
+    setFilter(userText)
     renderGallery()
 
+}
+
+function onFiltering(txt, elWord) {
+    setFilter(txt)
+    sizeUp(txt, elWord)
+    renderGallery();
+}
+
+function sizeUp(txt, elWord) {
+    const textSize = elWord.style.fontSize;
+    var size = (textSize) ? +textSize.split('rem')[0] : 0.7;
+
+    size += 0.2
+    var elCurrSearch = document.querySelector(`.${txt}`)
+    elCurrSearch.style.fontSize = size + 'rem';
+}
+
+function refresh() {
+    setFilter()
+    movePage('gallery')
+    renderGallery()
+
+}
+
+function toggleMenu() {
+    var elHamburger = document.querySelector('.links-container');
+    elHamburger.classList.toggle('open');
+    document.querySelector('.toggle-menu-screen').classList.toggle('visible')
 }

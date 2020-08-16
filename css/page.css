@@ -12,7 +12,12 @@ body {
     background-color: #22252c;
     font-family: Poppins;
 }
-.logo{
+
+.used-words {
+    display: inline-block;
+}
+
+.logo {
     cursor: pointer;
 }
 
@@ -26,7 +31,8 @@ body {
     justify-content: space-between;
     padding: 10px 30px;
 }
-.link{
+
+.link {
     color: white;
 }
 
@@ -44,7 +50,7 @@ body {
 }
 
 .links-container>div {
-    padding-right: 30px
+    padding-right: 70px
 }
 
 .main-container {
@@ -71,14 +77,12 @@ body {
     padding: 0 40px;
 }
 
-
-
 .last-searches {
-    width: 300px;
+    width: 100%;
     background-color: #fefefe;
     border-radius: 25px;
-    padding: 15px 15px;
-    margin: 0 15px;
+    padding: 15px 10px;
+    margin: 0 10px;
     box-shadow: 0 3px 6px 1px rgba(0, 0, 0, 0.15);
     justify-content: space-between;
 }
@@ -88,7 +92,7 @@ a {
 }
 
 .last-searches>a {
-    font-size: 0.9rem;
+    font-size: 0.7em;
     margin-right: 5px;
 }
 
@@ -119,6 +123,28 @@ a {
     opacity: 0.5;
 }
 
+.toggle-menu-btn {
+    background: none;
+    border: none;
+    color: #fff;
+    display: none;
+}
+
+.toggle-menu-screen {
+    display: none;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    background: rgba(42, 42, 42, 0.6);
+    z-index: 100;
+    opacity: 0;
+    visibility: hidden;
+    cursor: pointer;
+    transition: opacity .5s;
+}
+
 @media(max-width:650px) {
     .gallery-container {
         grid-template-columns: repeat(2, 1fr);
@@ -138,7 +164,43 @@ a {
     }
     .last-searches {
         width: 100%;
-        margin:0;
+        margin: 0;
         margin-bottom: 15px;
+    }
+    .links-container {
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        right: 0;
+        z-index: 300;
+        background: #292929;
+        height: 100vh;
+        transition: transform 1s;
+        padding: 10px 10px;
+        transform: translate(100%, 0);
+    }
+    .open {
+        transform: translate(0, 0);
+
+    }
+    .toggle-menu-screen {
+        display: block;
+    }
+    .visible   {
+        visibility: visible;
+        opacity: 1;
+    }
+    .toggle-menu-btn {
+        display: block;
+    }
+    .links-container>div {
+        padding: 25px 25px;
+    }
+
+}
+
+@media (max-width:480px){
+    .save-share-download{
+        flex-direction: column;
     }
 }
